@@ -1,0 +1,14 @@
+<h1>Jaké je hlavní město {{ country.name }}?</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="country_id" value="{{ country.id }}">
+
+    {% for option in options %}
+        <label>
+            <input type="radio" name="answer" value="{{ option }}" required>
+            {{ option }}
+        </label><br>
+    {% endfor %}
+
+    <button type="submit">Odpovědět</button>
+</form>

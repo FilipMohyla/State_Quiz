@@ -1,0 +1,6 @@
+{% if is_correct %}
+    <p>✅ Správně! {{ country.capital }} je hlavní město {{ country.name }}.</p>
+{% else %}
+    <p>❌ Špatně! Ty jsi vybral {{ user_answer }}, ale správně je {{ country.capital }}.</p>
+{% endif %}
+<a href="{% url 'quiz' %}">Další otázka</a>
