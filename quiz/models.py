@@ -1,10 +1,11 @@
 from django.db import models
 
 
-class State(models.Model):
+class Country(models.Model):
     
-    state_name = models.CharField()
+    name = models.CharField(max_length=100, unique=True)
+    capital = models.CharField(max_length=100)
 
-class Capital(models.Model):
-
-    capital_name = models.OneToOneField(State, on_delete=models.CASCADE)
+    def __str__(self):
+        
+        return self.name
